@@ -6,6 +6,7 @@ import CreateManufacturer from "./ManufacturerCreate";
 import AutomobileList from "./AutomobileList";
 import CreateTechnician from "./CreateTech";
 import TechList from "./TechnicianList";
+import CreateServiceAppointment from "./ServiceForm";
 
 function App(props) {
   if (
@@ -36,6 +37,10 @@ function App(props) {
           <Route
             path="technicians"
             element={<TechList technicians={props.technicians} />}
+          />
+          <Route
+            path="appointments/create"
+            element={<CreateServiceAppointment />}
           />
         </Routes>
       </div>

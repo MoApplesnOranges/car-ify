@@ -32,6 +32,18 @@ class AppointmentEncoder(ModelEncoder):
         }
 
 
+# class PostAppointmentEncoder(ModelEncoder):
+#     model = Appointment
+#     properties = [
+#         "vin",
+#         "customer",
+#         "date_time",
+#         "reason",
+#         "id",
+#         "technician"
+#     ]
+
+
 @require_http_methods(["GET", "POST"])
 def api_list_technicians(request):
     try:
@@ -63,10 +75,9 @@ def api_list_appointments(request):
         return JsonResponse({"Appointments": appointments}, encoder=AppointmentEncoder)
     else:
         content = json.loads(request.body)
-        print(content)
         try:
-            stat = content["status"]
-            status = Status.objects.get(name=stat)
+            # stat = content["status"]
+            status = Status.objects.get(name="CREATED")
             content["status"] = status
         except Status.DoesNotExist:
             return JsonResponse({"message": "Invalid status name"}, status=400)

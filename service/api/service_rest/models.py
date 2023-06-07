@@ -17,7 +17,8 @@ class AutomobileVO(models.Model):
 
 
 class Status(models.Model):
-    name = models.CharField(max_length=10, unique=True)
+    id = models.SmallIntegerField(primary_key=True)
+    name = models.CharField(max_length=10, null=True, primary_key=False)
 
     def __str__(self):
         return self.name
@@ -35,10 +36,10 @@ class Appointment(models.Model):
         appointment.save()
         return appointment
 
-    date_time = models.DateTimeField(auto_now=True)
+    date_time = models.DateTimeField()
     reason = models.CharField(max_length=250)
     status = models.ForeignKey(
-        Status, related_name="appointments", on_delete=models.PROTECT
+        Status, null=True, related_name="appointments", on_delete=models.PROTECT
     )
     vin = models.CharField(max_length=200)
     customer = models.CharField(max_length=200)
