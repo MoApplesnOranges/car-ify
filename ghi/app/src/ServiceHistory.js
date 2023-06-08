@@ -1,43 +1,11 @@
 import React from "react";
 
-function AppointmentList(props) {
-  const cancelAppt = async (event, appointment) => {
-    event.preventDefault();
-
-    const locationUrl = `http://localhost:8080/api/appointments/${appointment.id}/cancel`;
-    const fetchConfig = {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    const response = await fetch(locationUrl, fetchConfig);
-    if (response.ok) {
-      await response.json();
-    }
-  };
-
-  const finishAppt = async (event, appointment) => {
-    event.preventDefault();
-
-    const locationUrl = `http://localhost:8080/api/appointments/${appointment.id}/finish`;
-    const fetchConfig = {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    const response = await fetch(locationUrl, fetchConfig);
-    if (response.ok) {
-      await response.json();
-    }
-  };
-
+function HistoryOfService(props) {
   return (
     <div className="row">
       <div className="offset-3 col-6">
         <div className="shadow p-4 mt-4">
-          <h1>Service Appointments</h1>
+          <h1>Service History</h1>
           <table className="table table-striped">
             <thead>
               <tr>
@@ -48,6 +16,7 @@ function AppointmentList(props) {
                 <th>Time</th>
                 <th>Technician</th>
                 <th>Reason</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
@@ -75,6 +44,7 @@ function AppointmentList(props) {
                       <td>{time}</td>
                       <td>{appointment.technician}</td>
                       <td>{appointment.reason}</td>
+                      <td>{appointment.status}</td>
                       <td>
                         <button
                           className="btn btn-danger"
@@ -109,4 +79,4 @@ function AppointmentList(props) {
   );
 }
 
-export default AppointmentList;
+export default HistoryOfService;
