@@ -14,10 +14,6 @@ function ModelsList(props) {
         }
     }
 
-    // const tableStyle = {
-    //     borderBottom: '2px solid black',
-    // };
-
     return (
         <div>
         <h1>Models</h1>

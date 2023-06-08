@@ -34,7 +34,7 @@ function AutomobileForm() {
         data.model_id = model;
         console.log(data);
 
-        const modelUrl = 'http://localhost:8100/api/automobiles/';
+        const autoUrl = 'http://localhost:8100/api/automobiles/';
         const fetchConfig = {
             method: "POST",
             body: JSON.stringify(data),
@@ -43,7 +43,7 @@ function AutomobileForm() {
             },
         };
 
-        const response = await fetch(modelUrl, fetchConfig);
+        const response = await fetch(autoUrl, fetchConfig);
         if (response.ok) {
             const newModel = await response.json();
             console.log(newModel);

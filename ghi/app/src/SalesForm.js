@@ -64,8 +64,6 @@ function SalesForm() {
             const errorData = await response.text();
             throw new Error(`POST request failed: ${errorData}`);
           }
-        // console.log('POST response', response);
-        // if (response.ok) {
             const newSale = await response.json();
             console.log(newSale);
 
@@ -77,28 +75,6 @@ function SalesForm() {
           console.error('Error', error.message);
         }
     };
-
-  //   const fetchData = async () => {
-  //     const urls = [
-  //       'http://localhost:8100/api/automobiles/',
-  //       'http://localhost:8100/api/salespeople/',
-  //       'http://localhost:8100/api/customers/',
-  //   ];
-
-  //   const setters = [
-  //     setAutomobiles,
-  //     setSalespersons,
-  //     setCustomers,
-  //   ]
-
-  //   for (let i = 0; i < urls.length; i++) {
-  //     const response = await fetch(urls[i]);
-  //     if (response.ok) {
-  //       const data = await response.json();
-  //       setters[i](data);
-  //     }
-  //   }
-  // }
 
   const fetchData = async () => {
     const autoUrl = 'http://localhost:8100/api/automobiles/';
@@ -122,35 +98,6 @@ function SalesForm() {
       setCustomers(customerData.customers);
     }
   }
-
-  //   if (response.ok) {
-  //       const data = await response.json();
-  //       setAutomobile(data.models);
-  //   }
-  // }
-
-  // const fetchData2 = async () => {
-
-
-  //   const response = await fetch(url);
-
-  //   if (response.ok) {
-  //       const data = await response.json();
-  //       setSalesperson(data.models);
-  //   }
-  // }
-
-  // const fetchData3 = async () => {
-
-
-  //   const response = await fetch(url);
-
-  //   if (response.ok) {
-  //       const data = await response.json();
-  //       setCustomer(data.models);
-  //   }
-  // }
-
 
 
     useEffect(() => {
