@@ -4,7 +4,7 @@ function SalespeopleList(props) {
     }
 
     async function deleteModel(id) {
-        const salespeopleURL = `http://localhost:8090/api/salespeople/${id}`;
+        const salespeopleURL = `http://localhost:8090/api/salespeople/${id}/`;
         const fetchConfig = {
             method: 'DELETE',
         };
@@ -13,10 +13,6 @@ function SalespeopleList(props) {
             refreshSalespeople();
         }
     }
-
-    // const tableStyle = {
-    //     borderBottom: '2px solid black',
-    // };
 
     return (
         <div>

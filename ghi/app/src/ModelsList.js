@@ -4,7 +4,7 @@ function ModelsList(props) {
     }
 
     async function deleteModel(id) {
-        const modelURL = `http://localhost:8100/api/models/${id}`;
+        const modelURL = `http://localhost:8100/api/models/${id}/`;
         const fetchConfig = {
             method: 'DELETE',
         };

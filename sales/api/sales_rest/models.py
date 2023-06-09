@@ -4,7 +4,6 @@ from django.db import models
 
 
 class AutomobileVO(models.Model):
-    # href = models.CharField(max_length=200, null=True, unique=True)
     vin = models.CharField(max_length=150, unique=True)
     sold = models.BooleanField(default=False)
 
@@ -34,14 +33,14 @@ class Sale(models.Model):
         AutomobileVO,
         related_name="sales",
         on_delete=models.CASCADE,
-        )
+    )
     salesperson = models.ForeignKey(
         Salesperson,
         related_name="sales",
         on_delete=models.CASCADE,
-        )
+    )
     customer = models.ForeignKey(
         Customer,
         related_name="sales",
         on_delete=models.CASCADE,
-        )
+    )
