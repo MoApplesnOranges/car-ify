@@ -34,12 +34,6 @@ function SalesForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        // const data = {};
-        // data.price = price;
-        // data.vin = auto;
-        // data.salesperson = salesperson;
-        // data.customer = customer;
-        // console.log(data);
         const data = {
           price,
           vin: auto,
@@ -77,7 +71,7 @@ function SalesForm() {
     };
 
   const fetchData = async () => {
-    const autoUrl = 'http://localhost:8100/api/automobiles/';
+    const autoUrl = 'http://localhost:8090/api/unsold_automobiles/';
     const salespeopleUrl = 'http://localhost:8090/api/salespeople/';
     const customerUrl = 'http://localhost:8090/api/customers/';
 
@@ -108,15 +102,11 @@ function SalesForm() {
         <div className="row">
         <div className="offset-3 col-6">
           <div className="shadow p-4 mt-4">
-            <h1>Create a Sale</h1>
+            <h1>Record a new sale</h1>
             <form onSubmit={handleSubmit} id="create-model-form">
-              <div className="form-floating mb-3">
-                <input value={price} onChange={handlePriceChange} placeholder="Price" required type="text" name="price" id="price" className="form-control"/>
-                <label htmlFor="model">Price</label>
-              </div>
               <div className="mb-3">
                 <select value={auto} onChange={handleAutoChange} required id="autos" name="autos" className="form-select">
-                  <option value="">Choose an Automobile</option>
+                  <option value="">Automobile VIN</option>
                   {autos.map(auto => {
                     return (
                         <option key={auto.id} value={auto.vin}>
@@ -149,6 +139,10 @@ function SalesForm() {
                     );
                   })}
                 </select>
+              </div>
+              <div className="form-floating mb-3">
+                <input value={price} onChange={handlePriceChange} placeholder="Price" required type="text" name="price" id="price" className="form-control"/>
+                <label htmlFor="model">Price</label>
               </div>
               <button className="btn btn-primary">Create</button>
             </form>

@@ -30,6 +30,7 @@ async function loadData() {
   const automobileResponse = await fetch("http://localhost:8100/api/automobiles/");
   if (!automobileResponse.ok) throw new Error('Autos fetch failed');
   const automobilesData = await automobileResponse.json();
+  console.log(automobilesData);
 
   const customersResponse = await fetch("http://localhost:8090/api/customers/");
   if (!customersResponse.ok) throw new Error('Customers fetch failed');
@@ -52,7 +53,7 @@ async function loadData() {
           technicians={technicianData.Technicians}
           appointments={appointmentData.Appointments}
           models={modelsData.models}
-          automobiles={automobilesData.automobiles}
+          automobiles={automobilesData.autos}
           customers={customersData.customers}
           salespeople={salespeopleData.salespeople}
           sales={salesData.sales}

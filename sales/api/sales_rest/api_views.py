@@ -63,6 +63,16 @@ class SaleListEncoder(ModelEncoder):
         }
 
 
+@require_http_methods(["GET"])
+def api_unsold_automobiles(request):
+    if request.method == "GET":
+        autos = AutomobileVO.objects.filter(sold=False)
+        return JsonResponse(
+            {"autos": autos},
+            encoder=AutomobileVODetailEncoder,
+        )
+
+
 @require_http_methods(["GET", "POST"])
 def api_list_salespeople(request):
     if request.method == "GET":
@@ -72,16 +82,18 @@ def api_list_salespeople(request):
             encoder=SalesPersonListEncoder,
         )
     else:
+        content = json.loads(request.body)
         try:
-            content = json.loads(request.body)
             salesperson = Salesperson.objects.create(**content)
             return JsonResponse(
                 salesperson,
                 encoder=SalesPersonListEncoder,
                 safe=False,
             )
-        except:
-            response = JsonResponse({"message": "Could not create the salesperson"})
+        except Exception as e:
+            response = JsonResponse(
+                {"message": "Couldn't create the salesperson", "error": str(e)}
+            )
             response.status_code = 400
             return response
 
@@ -104,16 +116,18 @@ def api_list_customers(request):
             encoder=CustomerListEncoder,
         )
     else:
+        content = json.loads(request.body)
         try:
-            content = json.loads(request.body)
             customer = Customer.objects.create(**content)
             return JsonResponse(
                 customer,
                 encoder=CustomerListEncoder,
                 safe=False,
             )
-        except:
-            response = JsonResponse({"message": "Could not create the customer"})
+        except Exception as e:
+            response = JsonResponse(
+                {"message": "Couldn't create the customer", "error": str(e)}
+            )
             response.status_code = 400
             return response
 
@@ -153,6 +167,7 @@ def api_list_sales(request, automobile_vo_id=None):
         try:
             salesperson_id = content["salesperson"]
             salesperson = Salesperson.objects.get(id=salesperson_id)
+            content["salesperson"] = salesperson
         except Salesperson.DoesNotExist:
             return JsonResponse(
                 {"message": "Invalid salesperson id"},
@@ -160,8 +175,9 @@ def api_list_sales(request, automobile_vo_id=None):
             )
 
         try:
-            customer_id = content.get("customer")
+            customer_id = content["customer"]
             customer = Customer.objects.get(id=customer_id)
+            content["customer"] = customer
         except Customer.DoesNotExist:
             return JsonResponse(
                 {"message": "Invalid salesperson id"},
@@ -209,52 +225,3 @@ def api_delete_sale(request, pk):
         return JsonResponse(
             {"error": "Sale deletion failed due to ProtectedError"}, status=400
         )
-
-
-# THIS CODE WORKS EXCEPT IT WON'T SEND THE FORM DATA CORRECTLY
-
-
-# @require_http_methods(["GET", "POST"])
-# def api_list_sales(request):
-#     if request.method == "GET":
-#         sales = Sale.objects.all()
-#         return JsonResponse(
-#             {"sales": sales},
-#             encoder=SaleListEncoder,
-#         )
-#     else:
-#         try:
-#             content = json.loads(request.body)
-#             print(content)
-#             automobile_vin = content.get("vin")
-#             automobile = AutomobileVO.objects.get(vin=automobile_vin)
-
-#             salesperson_id = content.get("salesperson")
-#             salesperson = Salesperson.objects.get(id=salesperson_id)
-
-#             customer_id = content.get("customer")
-#             customer = Customer.objects.get(id=customer_id)
-
-#             price = content.get("price")
-
-#             sale = Sale.objects.create(
-#                 automobile=automobile,
-#                 salesperson=salesperson,
-#                 customer=customer,
-#                 price=price,
-#             )
-
-#             automobile.sold = True
-#             automobile.save()
-
-#             return JsonResponse(
-#                 sale,
-#                 encoder=SaleListEncoder,
-#                 safe=False,
-#             )
-#         except Exception as e:
-#             response = JsonResponse(
-#                 {"message": "Couldn't create the sale", "error": str(e)}
-#             )
-#         response.status_code = 400
-#         return response
