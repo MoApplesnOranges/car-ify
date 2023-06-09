@@ -99,77 +99,73 @@ function Nav() {
                   Add a Customer
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link active"
+                  id="sales-list"
+                  aria-current="page"
+                  to="/sales"
+                >
+                  Sales
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link active" to="/sales/new">
+                  Add a Sale
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link active" to="/sales/history">
+                  Salesperson History
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link active"
+                  aria-current="page"
+                  to="technicians"
+                >
+                  Technicians
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link active"
+                  aria-current="page"
+                  to="technicians/create"
+                >
+                  Add a Technician
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link active"
+                  aria-current="page"
+                  to="appointments"
+                >
+                  Service Appointments
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link active"
+                  aria-current="page"
+                  to="appointments/create"
+                >
+                  Create a Service Appointment
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link active"
+                  aria-current="page"
+                  to="appointments/history"
+                >
+                  Service History
+                </NavLink>
+              </li>
             </ul>
           </div>
-        </div>
-        <div className="row">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <NavLink
-                className="nav-link active"
-                id="sales-list"
-                aria-current="page"
-                to="/sales"
-              >
-                Sales
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link active" to="/sales/new">
-                Add a Sale
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link active" to="/sales/history">
-                Salesperson History
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className="nav-link active"
-                aria-current="page"
-                to="technicians"
-              >
-                Technicians
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className="nav-link active"
-                aria-current="page"
-                to="technicians/create"
-              >
-                Add a Technician
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className="nav-link active"
-                aria-current="page"
-                to="appointments"
-              >
-                Service Appointments
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className="nav-link active"
-                aria-current="page"
-                to="appointments/create"
-              >
-                Create a Service Appointment
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className="nav-link active"
-                aria-current="page"
-                to="appointments/history"
-              >
-                Service History
-              </NavLink>
-            </li>
-          </ul>
         </div>
       </div>
     </nav>
