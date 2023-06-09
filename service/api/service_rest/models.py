@@ -12,7 +12,7 @@ class Technician(models.Model):
 
 
 class AutomobileVO(models.Model):
-    vin = models.PositiveBigIntegerField()
+    vin = models.CharField(max_length=150, unique=True)
     sold = models.BooleanField(default=False)
 
 

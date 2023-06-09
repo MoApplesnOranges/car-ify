@@ -23,12 +23,14 @@ class AppointmentEncoder(ModelEncoder):
         "id",
         "technician",
         "status",
+        # "automobile",
     ]
 
     def get_extra_data(self, o):
         return {
             "technician": o.technician.first_name + " " + o.technician.last_name,
             "status": o.status.name,
+            # "automobile": o.automobile.vin,
         }
 
 
@@ -76,7 +78,6 @@ def api_list_appointments(request):
     else:
         content = json.loads(request.body)
         try:
-            # stat = content["status"]
             status = Status.objects.get(name="CREATED")
             content["status"] = status
         except Status.DoesNotExist:
@@ -110,11 +111,6 @@ def api_delete_appointment(request, pk):
 def api_cancel_appointment(request, pk):
     appointment = Appointment.objects.get(id=pk)
     appointment.canceled()
-    # body = {
-    #     "presenter_name": presentation.presenter_name,
-    #     "presenter_email": presentation.presenter_email,
-    #     "title": presentation.title,
-    # }
     return JsonResponse(
         appointment,
         encoder=AppointmentEncoder,
