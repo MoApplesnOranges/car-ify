@@ -61,6 +61,21 @@ function SalesForm() {
             const newSale = await response.json();
             console.log(newSale);
 
+            const autoUrl = `http://localhost:8100/api/automobiles/${auto}/`;
+            const autoFetchConfig = {
+              method: "PUT",
+              body: JSON.stringify({sold: true}),
+              headers: {
+                'Content-Type': 'application/json'
+              },
+            };
+            const autoResponse = await fetch(autoUrl, autoFetchConfig);
+            if (!autoResponse.ok) {
+              throw new Error('Error updating auto status');
+            }
+
+            fetchData();
+
             setPrice('');
             setAuto('');
             setSalesperson('');

@@ -4,7 +4,7 @@ function CustomerList(props) {
     }
 
     async function deleteModel(id) {
-        const customerURL = `http://localhost:8090/api/customers/${id}`;
+        const customerURL = `http://localhost:8090/api/customers/${id}/`;
         const fetchConfig = {
             method: 'DELETE',
         };
@@ -13,10 +13,6 @@ function CustomerList(props) {
             refreshModels();
         }
     }
-
-    // const tableStyle = {
-    //     borderBottom: '2px solid black',
-    // };
 
     return (
         <div>

@@ -48,9 +48,6 @@ function SalespersonForm() {
         }
     }
 
-    // useEffect(() => {
-    //     fetchData();
-    // }, []);
 
     return (
         <div className="row">
