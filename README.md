@@ -2,8 +2,8 @@
 
 Team:
 
-* Person 1 - Which microservice?
-* Person 2 - Which microservice?
+* Person 1: Will Mo | Microservice: Auto Service | Inventory:
+* Person 2: Matt Snyder| Microservice: Auto Sales | Inventory:
 
 ## Design
 

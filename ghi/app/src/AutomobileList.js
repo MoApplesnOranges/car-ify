@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 
 function AutomobileList(props) {
   return (
@@ -18,7 +18,8 @@ function AutomobileList(props) {
               </tr>
             </thead>
             <tbody>
-              {props.automobiles.map((auto) => {
+              {props.automobiles && props.automobiles.map((auto) => {
+                console.log(props.automobiles)
                 return (
                   <tr key={auto.vin}>
                     <td>{auto.vin}</td>
