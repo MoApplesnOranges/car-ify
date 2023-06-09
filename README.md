@@ -9,7 +9,7 @@ Team:
 
 ## Service microservice
 
-For the inventory, Matt and I separated the endpoints based on entities. He took vehicleModel and I took manufacturer. We split the automobile entity in two with Matt taking create an automobile and I created the automobile list.
+For the inventory, Matt and I separated the endpoints based on entities. He took vehicleModel and I took manufacturer. We split the automobile entity in two with Matt taking create an automobile form and I created the automobile list.
 
 For the service microservice, I initiated through creating views, models, and urls for the API endpoints. I then tested to make sure they all worked using Insomnia. After which I tested my polling to make sure it was connected to AutomobileVO.
 
