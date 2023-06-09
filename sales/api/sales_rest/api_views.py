@@ -98,11 +98,19 @@ def api_list_salespeople(request):
             return response
 
 
+# @require_http_methods(["DELETE"])
+# def api_delete_salesperson(request, pk):
+#     try:
+#         count, _ = Salesperson.objects.filter(id=pk).delete()
+#         return JsonResponse({"deleted": count > 0})
+#     except Salesperson.DoesNotExist:
+#         return JsonResponse({"error": "Salesperson not found"}, status=404)
 @require_http_methods(["DELETE"])
 def api_delete_salesperson(request, pk):
     try:
-        count, _ = Salesperson.objects.filter(id=pk).delete()
-        return JsonResponse({"deleted": count > 0})
+        salesperson = Salesperson.objects.filter(id=pk)
+        salesperson.delete()
+        return JsonResponse({"deleted": True})
     except Salesperson.DoesNotExist:
         return JsonResponse({"error": "Salesperson not found"}, status=404)
 
@@ -132,11 +140,19 @@ def api_list_customers(request):
             return response
 
 
+# @require_http_methods(["DELETE"])
+# def api_delete_customer(request, pk):
+#     try:
+#         count, _ = Customer.objects.filter(id=pk).delete()
+#         return JsonResponse({"deleted": count > 0})
+#     except Customer.DoesNotExist:
+#         return JsonResponse({"error": "Customer not found"}, status=404)
 @require_http_methods(["DELETE"])
 def api_delete_customer(request, pk):
     try:
-        count, _ = Customer.objects.filter(id=pk).delete()
-        return JsonResponse({"deleted": count > 0})
+        customer = Customer.objects.filter(id=pk)
+        customer.delete()
+        return JsonResponse({"deleted": True})
     except Customer.DoesNotExist:
         return JsonResponse({"error": "Customer not found"}, status=404)
 

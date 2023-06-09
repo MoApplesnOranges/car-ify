@@ -17,7 +17,7 @@ function SalesList(props) {
 
     return (
         <div>
-        <h1>Models</h1>
+        <h1>Sales</h1>
         <table className="table table-striped">
             <thead>
                 <tr>
