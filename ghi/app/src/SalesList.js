@@ -14,25 +14,10 @@ function SalesList(props) {
         }
     }
 
-    // useEffect(() => {
-    //     const fetchSales = async () => {
-    //         const response = await fetch('http://localhost:8100/api/sales/')
-    //         if (response.ok) {
-    //             const data = await response.json();
-    //             setSales(data);
-    //         }
-    //     }
-
-    //     fetchSales();
-    // }, []);
-
-    // const tableStyle = {
-    //     borderBottom: '2px solid black',
-    // };
 
     return (
         <div>
-        <h1>Models</h1>
+        <h1>Sales</h1>
         <table className="table table-striped">
             <thead>
                 <tr>

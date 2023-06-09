@@ -1,6 +1,5 @@
-// import React from "react";
-
 function AutomobileList(props) {
+  console.log(props)
   return (
     <div className="row">
       <div className="offset-3 col-6">
