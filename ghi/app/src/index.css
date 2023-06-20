@@ -31,10 +31,17 @@ code {
   list-style: none;
   padding: 0;
   margin: 0;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
 
-.nav-item {
-  flex: 0 0 11%;
+.navbar-item {
+  flex: 0 0 10%;
   padding: 10px;
   text-align: center;
+<<<<<<< HEAD
+=======
+  width: 33%;
+>>>>>>> 8af861b187460d488b839cb2887d6e107daac297
 }

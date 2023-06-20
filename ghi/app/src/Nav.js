@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 import "./index.css";
 import { Link, NavLink, Navigate } from "react-router-dom";
 import React from "react";
 import { Dropdown } from "react-bootstrap";
+=======
+import { Link, NavLink, Navigate } from "react-router-dom";
+import "./index.css";
+import React from "react";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
+>>>>>>> 8af861b187460d488b839cb2887d6e107daac297
 
 function Nav() {
   return (
@@ -14,7 +22,11 @@ function Nav() {
             width="100"
             height="75"
           />
+<<<<<<< HEAD
           <div id="main">Home</div>
+=======
+          <div id="main">CarCar</div>
+>>>>>>> 8af861b187460d488b839cb2887d6e107daac297
         </NavLink>
         <button
           className="navbar-toggler"
@@ -29,8 +41,11 @@ function Nav() {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <div className="row">
+<<<<<<< HEAD
             {/* <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item"> */}
+=======
+>>>>>>> 8af861b187460d488b839cb2887d6e107daac297
             <ul className="navbar-nav">
               <li className="navbar-item">
                 <Dropdown>
@@ -114,7 +129,13 @@ function Nav() {
                 </Dropdown>
               </li>
             </ul>
+<<<<<<< HEAD
             {/* <NavLink
+=======
+            {/* <ul className="navbar-nav me-auto mb-2 mb-lg-0"> */}
+            {/* <li className="nav-item">
+                <NavLink
+>>>>>>> 8af861b187460d488b839cb2887d6e107daac297
                   className="nav-link active"
                   aria-current="page"
                   to="manufacturers"
@@ -145,8 +166,8 @@ function Nav() {
                 <NavLink className="nav-link active" to="/models/new">
                   Create a Model
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   aria-current="page"
@@ -154,13 +175,13 @@ function Nav() {
                 >
                   Automobiles
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink className="nav-link active" to="/automobiles/new">
                   Create an Automobile
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   id="automobile-list"
@@ -169,13 +190,13 @@ function Nav() {
                 >
                   Salespeople
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink className="nav-link active" to="/salespeople/new">
                   Add a Salesperson
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   id="customer-list"
@@ -184,13 +205,13 @@ function Nav() {
                 >
                   Customers
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink className="nav-link active" to="/customers/new">
                   Add a Customer
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   id="sales-list"
@@ -199,18 +220,18 @@ function Nav() {
                 >
                   Sales
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink className="nav-link active" to="/sales/new">
                   Add a Sale
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink className="nav-link active" to="/sales/history">
                   Salesperson History
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   aria-current="page"
@@ -218,8 +239,8 @@ function Nav() {
                 >
                   Technicians
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   aria-current="page"
@@ -227,8 +248,8 @@ function Nav() {
                 >
                   Add a Technician
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   aria-current="page"
@@ -236,8 +257,8 @@ function Nav() {
                 >
                   Service Appointments
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   aria-current="page"
@@ -245,8 +266,8 @@ function Nav() {
                 >
                   Create a Service Appointment
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   aria-current="page"
@@ -254,8 +275,13 @@ function Nav() {
                 >
                   Service History
                 </NavLink>
+<<<<<<< HEAD
               </li>
             </ul> */}
+=======
+              </li> */}
+            {/* </ul> */}
+>>>>>>> 8af861b187460d488b839cb2887d6e107daac297
           </div>
         </div>
       </div>

@@ -11,22 +11,34 @@ function SalesForm() {
 
   const handlePriceChange = (event) => {
     const value = event.target.value;
+<<<<<<< HEAD
     console.log("Price", value);
+=======
+>>>>>>> 8af861b187460d488b839cb2887d6e107daac297
     setPrice(value);
   };
   const handleAutoChange = (event) => {
     const value = event.target.value;
+<<<<<<< HEAD
     console.log("Auto", value);
+=======
+>>>>>>> 8af861b187460d488b839cb2887d6e107daac297
     setAuto(value);
   };
   const handleSalespersonChange = (event) => {
     const value = event.target.value;
+<<<<<<< HEAD
     console.log("Salesperson", value);
+=======
+>>>>>>> 8af861b187460d488b839cb2887d6e107daac297
     setSalesperson(value);
   };
   const handleCustomerChange = (event) => {
     const value = event.target.value;
+<<<<<<< HEAD
     console.log("Customer", value);
+=======
+>>>>>>> 8af861b187460d488b839cb2887d6e107daac297
     setCustomer(value);
   };
 
@@ -55,7 +67,11 @@ function SalesForm() {
         const errorData = await response.text();
         throw new Error(`POST request failed: ${errorData}`);
       }
+<<<<<<< HEAD
       await response.json();
+=======
+      const newSale = await response.json();
+>>>>>>> 8af861b187460d488b839cb2887d6e107daac297
 
       const autoUrl = `http://localhost:8100/api/automobiles/${auto}/`;
       const autoFetchConfig = {
@@ -87,11 +103,16 @@ function SalesForm() {
     const customerUrl = "http://localhost:8090/api/customers/";
 
     const autoResponse = await fetch(autoUrl);
+<<<<<<< HEAD
     console.log("autoResponse", autoResponse);
     const salespeopleResponse = await fetch(salespeopleUrl);
     console.log("salespeopleResponse", salespeopleResponse);
     const customerResponse = await fetch(customerUrl);
     console.log("customerResponse", customerResponse);
+=======
+    const salespeopleResponse = await fetch(salespeopleUrl);
+    const customerResponse = await fetch(customerUrl);
+>>>>>>> 8af861b187460d488b839cb2887d6e107daac297
 
     if (autoResponse.ok && salespeopleResponse.ok && customerResponse.ok) {
       const autoData = await autoResponse.json();

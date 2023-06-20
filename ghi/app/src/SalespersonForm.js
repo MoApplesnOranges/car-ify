@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
+=======
+import React, { useEffect, useState } from "react";
+>>>>>>> 8af861b187460d488b839cb2887d6e107daac297
 
 function SalespersonForm() {
   const [firstName, setFirstName] = useState("");
@@ -37,7 +41,11 @@ function SalespersonForm() {
 
     const response = await fetch(salespersonUrl, fetchConfig);
     if (response.ok) {
+<<<<<<< HEAD
       await response.json();
+=======
+      const newSalesperson = await response.json();
+>>>>>>> 8af861b187460d488b839cb2887d6e107daac297
 
       setFirstName("");
       setLastName("");
