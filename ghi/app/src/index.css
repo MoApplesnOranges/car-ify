@@ -12,10 +12,17 @@ code {
     monospace;
 }
 
+#main {
+  font-size: xx-large;
+}
+
 .navbar {
   display: flex;
   justify-content: left;
   background-color: #f1f1f1;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
 
 .navbar-nav {
@@ -29,5 +36,5 @@ code {
 .nav-item {
   flex: 0 0 11%;
   padding: 10px;
-  text-align: left;
+  text-align: center;
 }

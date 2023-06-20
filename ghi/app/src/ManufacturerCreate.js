@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 function CreateManufacturer() {
   const handleSubmit = async (event) => {
@@ -16,15 +16,10 @@ function CreateManufacturer() {
     };
     const response = await fetch(locationUrl, fetchConfig);
     if (response.ok) {
-      const newManufacturer = await response.json();
-
+      await response.json();
       setFormData({
         name: "",
       });
-      //   setName("");
-      //   setRoom("");
-      //   setCity("");
-      //   setState("");
     }
   };
   const [formData, setFormData] = useState({

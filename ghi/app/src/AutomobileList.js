@@ -1,5 +1,4 @@
 function AutomobileList(props) {
-  console.log(props)
   return (
     <div className="row">
       <div className="offset-3 col-6">
@@ -17,19 +16,19 @@ function AutomobileList(props) {
               </tr>
             </thead>
             <tbody>
-              {props.automobiles && props.automobiles.map((auto) => {
-                console.log(props.automobiles)
-                return (
-                  <tr key={auto.vin}>
-                    <td>{auto.vin}</td>
-                    <td>{auto.color}</td>
-                    <td>{auto.year}</td>
-                    <td>{auto.model.name}</td>
-                    <td>{auto.model.manufacturer.name}</td>
-                    <td>{String(auto.sold)}</td>
-                  </tr>
-                );
-              })}
+              {props.automobiles &&
+                props.automobiles.map((auto) => {
+                  return (
+                    <tr key={auto.vin}>
+                      <td>{auto.vin}</td>
+                      <td>{auto.color}</td>
+                      <td>{auto.year}</td>
+                      <td>{auto.model.name}</td>
+                      <td>{auto.model.manufacturer.name}</td>
+                      <td>{String(auto.sold)}</td>
+                    </tr>
+                  );
+                })}
             </tbody>
           </table>
         </div>
