@@ -57,8 +57,5 @@ class Appointment(models.Model):
         self.status = status
         self.save()
 
-    # def get_api_url(self):
-    #     return reverse("api_show_presentation", kwargs={"pk": self.pk})
-
     def __str__(self):
         return self.reason

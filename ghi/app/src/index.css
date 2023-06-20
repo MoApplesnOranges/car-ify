@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+#main {
+  font-size: xx-large;
+}
+
 .navbar {
   display: flex;
   justify-content: left;
@@ -24,10 +28,14 @@ code {
   list-style: none;
   padding: 0;
   margin: 0;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
 
-.nav-item {
-  flex: 0 0 11%;
+.navbar-item {
+  flex: 0 0 10%;
   padding: 10px;
-  text-align: left;
+  text-align: center;
+  width: 33%;
 }

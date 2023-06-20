@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 function CreateManufacturer() {
   const handleSubmit = async (event) => {
@@ -21,10 +21,6 @@ function CreateManufacturer() {
       setFormData({
         name: "",
       });
-      //   setName("");
-      //   setRoom("");
-      //   setCity("");
-      //   setState("");
     }
   };
   const [formData, setFormData] = useState({

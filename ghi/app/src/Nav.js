@@ -1,12 +1,21 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, Navigate } from "react-router-dom";
 import "./index.css";
+import React from "react";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
 
 function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-success ">
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/">
-          CarCar
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbqNx3IE9hBOozWSCy-aBDCXAZAkvKv2KbexAiTG_iGw&usqp=CAU&ec=48665701"
+            alt=""
+            width="100"
+            height="75"
+          />
+          <div id="main">CarCar</div>
         </NavLink>
         <button
           className="navbar-toggler"
@@ -21,8 +30,91 @@ function Nav() {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <div className="row">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
+            <ul className="navbar-nav">
+              <li className="navbar-item">
+                <Dropdown>
+                  <Dropdown.Toggle variant="success" id="dropdown-inventory">
+                    Inventory
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item as={Link} to="manufacturers">
+                      Manufacturers
+                    </Dropdown.Item>
+                    <Dropdown.Item as={Link} to="manufacturers/create">
+                      Create a Manufacturer
+                    </Dropdown.Item>
+                    <Dropdown.Item as={Link} to="/models">
+                      Models
+                    </Dropdown.Item>
+                    <Dropdown.Item as={Link} to="/models/new">
+                      Create a Model
+                    </Dropdown.Item>
+                    <Dropdown.Item as={Link} to="automobiles">
+                      Automobiles
+                    </Dropdown.Item>
+                    <Dropdown.Item as={Link} to="/automobiles/new">
+                      Create an Automobile
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </li>
+              <li className="navbar-item">
+                <Dropdown>
+                  <Dropdown.Toggle variant="success" id="dropdown-sales">
+                    Sales
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item as={Link} to="/salespeople">
+                      Salespeople
+                    </Dropdown.Item>
+                    <Dropdown.Item as={Link} to="/salespeople/new">
+                      Add a Salesperson
+                    </Dropdown.Item>
+                    <Dropdown.Item as={Link} to="/customers">
+                      Customers
+                    </Dropdown.Item>
+                    <Dropdown.Item as={Link} to="/customers/new">
+                      Add a Customer
+                    </Dropdown.Item>
+                    <Dropdown.Item as={Link} to="/sales">
+                      Sales
+                    </Dropdown.Item>
+                    <Dropdown.Item as={Link} to="/sales/new">
+                      Add a Sale
+                    </Dropdown.Item>
+                    <Dropdown.Item as={Link} to="/sales/history">
+                      Salesperson History
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </li>
+              <li className="navbar-item">
+                <Dropdown>
+                  <Dropdown.Toggle variant="success" id="dropdown-service">
+                    Service
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item as={Link} to="technicians">
+                      Technicians
+                    </Dropdown.Item>
+                    <Dropdown.Item as={Link} to="technicians/create">
+                      Add a Technician
+                    </Dropdown.Item>
+                    <Dropdown.Item as={Link} to="appointments">
+                      Service Appointments
+                    </Dropdown.Item>
+                    <Dropdown.Item as={Link} to="appointments/create">
+                      Create a Service Appointment
+                    </Dropdown.Item>
+                    <Dropdown.Item as={Link} to="appointments/history">
+                      Service History
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </li>
+            </ul>
+            {/* <ul className="navbar-nav me-auto mb-2 mb-lg-0"> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   aria-current="page"
@@ -54,8 +146,8 @@ function Nav() {
                 <NavLink className="nav-link active" to="/models/new">
                   Create a Model
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   aria-current="page"
@@ -63,13 +155,13 @@ function Nav() {
                 >
                   Automobiles
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink className="nav-link active" to="/automobiles/new">
                   Create an Automobile
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   id="automobile-list"
@@ -78,13 +170,13 @@ function Nav() {
                 >
                   Salespeople
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink className="nav-link active" to="/salespeople/new">
                   Add a Salesperson
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   id="customer-list"
@@ -93,13 +185,13 @@ function Nav() {
                 >
                   Customers
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink className="nav-link active" to="/customers/new">
                   Add a Customer
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   id="sales-list"
@@ -108,18 +200,18 @@ function Nav() {
                 >
                   Sales
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink className="nav-link active" to="/sales/new">
                   Add a Sale
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink className="nav-link active" to="/sales/history">
                   Salesperson History
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   aria-current="page"
@@ -127,8 +219,8 @@ function Nav() {
                 >
                   Technicians
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   aria-current="page"
@@ -136,8 +228,8 @@ function Nav() {
                 >
                   Add a Technician
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   aria-current="page"
@@ -145,8 +237,8 @@ function Nav() {
                 >
                   Service Appointments
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   aria-current="page"
@@ -154,8 +246,8 @@ function Nav() {
                 >
                   Create a Service Appointment
                 </NavLink>
-              </li>
-              <li className="nav-item">
+              </li> */}
+            {/* <li className="nav-item">
                 <NavLink
                   className="nav-link active"
                   aria-current="page"
@@ -163,8 +255,8 @@ function Nav() {
                 >
                   Service History
                 </NavLink>
-              </li>
-            </ul>
+              </li> */}
+            {/* </ul> */}
           </div>
         </div>
       </div>
